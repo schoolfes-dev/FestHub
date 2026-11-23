@@ -1,0 +1,72 @@
+name: "🐛 バグ報告"
+description: "FestHubの不具合を報告する"
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        FestHubへのバグ報告ありがとうございます！
+
+        **重要:** セキュリティ上の脆弱性や、個人情報・認証情報の漏えいに関わる問題は、公開Issueに詳細を書かないでください。運営メンバーに非公開で報告方法を確認してください。
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 事前確認
+      options:
+        - label: 既存のIssueに同じ問題がないことを確認しました
+          required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 不具合の概要
+      description: どのような問題が起きていますか？
+      placeholder: 例：スタンプを読み取っても獲得履歴に反映されない
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: 問題を再現するための操作を教えてください。
+      placeholder: |
+        1. ○○画面を開く
+        2. △△を押す
+        3. □□が発生する
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した動作
+      description: 本来はどう動作するはずでしたか？
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 関係する機能
+      options:
+        - 電子スタンプラリー
+        - 入退場管理
+        - 整理券
+        - 会場マップ
+        - API・共通基盤
+        - 管理画面・フロントエンド
+        - その他・不明
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: 動作環境
+      description: OS・ブラウザ・バージョンなど、分かる範囲で記載してください。
+      placeholder: 例：Android 16 / Chrome、Windows 11 / Edge
+    validations:
+      required: false
+  - type: textarea
+    id: attachments
+    attributes:
+      label: ログ・スクリーンショット・補足
+      description: 必要なら追加してください。個人情報、APIキー、トークンなどは必ず除いてください。
+    validations:
+      required: false

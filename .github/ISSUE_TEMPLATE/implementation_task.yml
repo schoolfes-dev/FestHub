@@ -1,0 +1,67 @@
+name: "🛠️ 実装タスク"
+description: "Discordで方向性が決まった作業をIssueとして整理する"
+title: "[Task] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **企画・仕様の相談は、まずDiscordで行ってください。**
+
+        このフォームは「学園祭・文化祭 Dev Hub」の**プロジェクト掲示板にあるFestHub関連スレッド**で方向性が決まった実装作業や、リポジトリ整備タスク向けです。
+  - type: textarea
+    id: overview
+    attributes:
+      label: やること
+      description: 実装・修正・整備する内容を簡潔に記載してください。
+      placeholder: 例：イベントを作成するAPIエンドポイントを追加する
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜこの作業が必要ですか？
+    validations:
+      required: true
+  - type: textarea
+    id: completion
+    attributes:
+      label: 完了条件
+      description: 何ができればこのIssueを完了とみなせますか？チェックリスト形式がおすすめです。
+      placeholder: |
+        - [ ] ○○ができる
+        - [ ] △△の場合も正常に動作する
+        - [ ] 必要なテスト・ドキュメントが更新されている
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 対象領域
+      options:
+        - API・共通基盤
+        - 電子スタンプラリー
+        - 入退場管理
+        - 整理券
+        - 会場マップ
+        - 管理画面・フロントエンド
+        - ドキュメント
+        - 開発環境・CI
+        - その他
+    validations:
+      required: false
+  - type: input
+    id: discord
+    attributes:
+      label: Discordの議論リンク（任意）
+      description: 関連するメッセージやスレッドへのリンクがあれば記入してください。アクセスできる参加者だけが閲覧できる場合があります。
+      placeholder: https://discord.com/channels/...
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足・参考資料
+      description: 設計資料、関連Issue、考慮事項などがあれば記載してください。
+    validations:
+      required: false
